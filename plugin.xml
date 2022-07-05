@@ -27,8 +27,8 @@
 	<dependency id="es6-promise-plugin" version="4.1.0" />
 	
 	<config-file parent="/*" target="res/xml/config.xml">
-		<preference name="GradlePluginGoogleServicesEnabled" value="true" />
-      		<preference name="GradlePluginGoogleServicesVersion" value="3.5.0" />
+		<!--<preference name="GradlePluginGoogleServicesEnabled" value="true" />
+      		<preference name="GradlePluginGoogleServicesVersion" value="3.5.0" />-->
 		<param name="AndroidXEnabled" value="true" />
 		<feature name="Instana">
 			<param name="android-package" value="org.apache.cordova.Instana"/>
