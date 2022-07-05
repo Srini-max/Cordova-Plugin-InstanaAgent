@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	    id="Cordova-Plugin-InstanaAgent"
+	    version="1.0.0">
+	<name>Cordova Plugin Instana Agent</name>
+	<description></description>
+	
+	<license>MIT</license>
+	<keywords></keywords>
+	
+	<repo>https://github.com/Srini-max/Cordova-Plugin-InstanaAgent.git</repo>
+	<issue>https://github.com/Srini-max/Cordova-Plugin-InstanaAgent/issues</issue>
+	
+	<engines>
+		<engine name="cordova" version=">=8.0.0" />
+		<engine name="cordova-android" version=">=9.0.0" />
+    	</engines>
+	
+	<js-module name="Instana" src="www/Instana.js">
+		<clobbers target="Instana" />
+	</js-module>
+	
+	<!--<config-file parent="/*/application" target="AndroidManifest.xml">
+	<meta-data android:name="com.google.android.gms.wallet.api.enabled" android:value="true" />
+	</config-file>-->
+	
+	<dependency id="es6-promise-plugin" version="4.1.0" />
+	
+	<config-file parent="/*" target="res/xml/config.xml">
+		<preference name="GradlePluginGoogleServicesEnabled" value="true" />
+      		<preference name="GradlePluginGoogleServicesVersion" value="4.2.0" />
+		<feature name="Instana">
+			<param name="android-package" value="org.apache.cordova.Instana"/>
+			<param name="onload" value="true"/>
+		</feature>
+	</config-file>
+	 
+	<config-file parent="/*" target="AndroidManifest.xml">
+	</config-file>
+
+	<platform name="android">
+		<!--<preference name="AndroidXEnabled" value="true" />-->
+		<source-file src="src/android/Instana.java" target-dir="src/org/apache/cordova" />
+		<framework src="androidx.appcompat:appcompat:1.2.0"/>
+		<framework src="com.instana:android-agent-plugin:4.5.1" />
+		<framework src="com.instana:android-agent-runtime:4.5.1"/>
+	</platform>
+</plugin>
+   
